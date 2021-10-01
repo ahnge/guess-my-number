@@ -12,11 +12,30 @@ body {
   font-family: "Press Start 2P";
 }
 
+body.won {
+  background: hsl(84, 62%, 39%);
+}
+
 button {
   padding: 1.3rem;
   font-family: "Press Start 2P";
   font-size: 1.2rem;
   cursor: pointer;
+  border: 4px solid white;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+  border: 4px solid white;
+}
+
+.num.empty {
+  border: 4px solid red;
+}
+
+.num:disabled {
+  cursor: not-allowed;
 }
 
 header {
@@ -36,15 +55,19 @@ section h1 {
   font-size: 2rem;
 }
 
+.qCon {
+  position: relative;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
 .question {
   padding: 1.5rem;
+  display: inline-block;
   background-color: white;
   color: #232123;
   text-align: center;
-  width: 5rem;
   font-size: 2rem;
-  margin: 0 auto;
-  margin-top: 1.8rem;
 }
 
 .question::before {
@@ -53,9 +76,10 @@ section h1 {
   height: 5px;
   position: absolute;
   background-color: white;
-  top: 217px;
   z-index: -1;
   left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .container {
@@ -92,4 +116,17 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .right p {
   margin-top: 1rem;
+}
+
+.right .hint {
+  margin-top: 3rem;
+  color: red;
+}
+
+.check:disabled {
+  cursor: not-allowed;
+}
+
+.warn {
+  margin-bottom: 1rem;
 }
